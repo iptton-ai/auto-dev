@@ -6,9 +6,15 @@ gradleIntelliJPlugin = "2.1.0"
 qodana = "0.1.13"
 kover = "0.7.5"
 
+jewel = "0.13.0"   # TODO: update to required Jewel version
+
 chapi = "2.1.2"
 
 [libraries]
+
+# JetBrains Jewel UI library
+jewel-core = { module = "org.jetbrains.jewel:jewel-core", version.ref = "jewel" }
+jewel-compose = { module = "org.jetbrains.jewel:jewel-compose", version.ref = "jewel" }
 
 
 [plugins]

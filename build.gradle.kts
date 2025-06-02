@@ -294,6 +294,10 @@ project(":") {
         implementation(project(":exts:ext-container"))
         implementation(project(":exts:devins-lang"))
 
+        // JetBrains Jewel UI library
+        implementation(libs.jewel.core)
+        implementation(libs.jewel.compose)
+
         kover(project(":core"))
         kover(project(":goland"))
         kover(project(":java"))
@@ -307,12 +311,6 @@ project(":") {
     }
 
     tasks {
-        val projectName = project.extensionProvider.flatMap { it.projectName }
-
-        composedJar {
-            archiveBaseName.convention(projectName)
-        }
-
         withType<RunIdeTask> {
             // Default args for IDEA installation
             jvmArgs("-Xmx768m", "-XX:+UseG1GC", "-XX:SoftRefLRUPolicyMSPerMB=50")
