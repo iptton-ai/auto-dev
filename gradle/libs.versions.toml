@@ -6,9 +6,16 @@ gradleIntelliJPlugin = "2.1.0"
 qodana = "0.1.13"
 kover = "0.7.5"
 
+compose = "1.5.10" # TODO: update to required Compose version
+jewel = "0.13.0"   # TODO: update to required Jewel version
+
 chapi = "2.1.2"
 
 [libraries]
+
+# JetBrains Jewel UI library
+jewel-core = { module = "org.jetbrains.jewel:jewel-core", version.ref = "jewel" }
+jewel-compose = { module = "org.jetbrains.jewel:jewel-compose", version.ref = "jewel" }
 
 
 [plugins]
@@ -19,5 +26,6 @@ kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kover" }
 qodana = { id = "org.jetbrains.qodana", version.ref = "qodana" }
 serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+compose = { id = "org.jetbrains.compose", version.ref = "compose" }
 
 [bundles]
