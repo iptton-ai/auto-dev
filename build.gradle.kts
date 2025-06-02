@@ -24,6 +24,7 @@ plugins {
     alias(libs.plugins.kover) // Gradle Kover Plugin
     alias(libs.plugins.serialization)
     alias(libs.plugins.gradleIntelliJPlugin)
+    alias(libs.plugins.compose)
 
     id("org.jetbrains.grammarkit") version "2022.3.2.2"
 
@@ -293,6 +294,10 @@ project(":") {
         implementation(project(":exts:ext-endpoints"))
         implementation(project(":exts:ext-container"))
         implementation(project(":exts:devins-lang"))
+
+        // JetBrains Jewel UI library
+        implementation(libs.jewel.core)
+        implementation(libs.jewel.compose)
 
         kover(project(":core"))
         kover(project(":goland"))
